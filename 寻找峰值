@@ -1,0 +1,10 @@
+int findPeakElement(int *nums, int numsSize)
+{
+    int seq = 0;
+
+    while (seq + 1 < numsSize && nums[seq + 1] < nums[seq]) return 0;
+    while (seq + 1 < numsSize && nums[seq + 1] > nums[seq]) seq++;
+
+    return seq;
+}
+
