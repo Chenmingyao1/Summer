@@ -1,0 +1,19 @@
+都从两个数组的最后一位开始比较，大的数填入结果数组最后一位，倒序比较，倒序填入
+void merge(int *nums1,int num1size,int m,int*nums2,int num2size,int n)
+{
+     int i,j;//角标
+     i=m-1,
+     n=j-1;
+     while(i>=0&&j>=0){
+           if(nums1[i]<nums2[j]){
+           nums1[i+j+1]=nums2[j];
+           j--;//比完向前移}
+           else{
+           nums1[i+j+1]=nums1[i];
+           i--;}
+           }
+      while(j>=0)//若只剩下nums1，则就是最后结果不用管。如果剩下nums2,那么倒序依次填进去
+           {
+           nums1[j]=nums2[j];
+            j--;}
+ }    
