@@ -1,0 +1,14 @@
+struct listnode{
+int val;
+structlistnode *next;
+};
+
+
+
+
+void deletenode(struct listnode* node){
+struct listnode*temp=node->next;
+node->val=node->next->val;
+node->next=node->next->next;
+free(temp);
+}
